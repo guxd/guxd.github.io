@@ -1,5 +1,5 @@
 @inproceedings{zhang2022dietcodebert, <br>
-  title={Diet Code is Healthy: Simplifying Programs for Pre-Trained Models of Code},<br>
+  title={Diet Code Is Healthy: Simplifying Programs for Pre-Trained Models of Code},<br>
   author={Zhang, Zhaowei and Zhang, Hongyu and Shen, Beijun and Gu, Xiaodong},<br>
   booktitle={Proceedings of the 30th ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE 2022)},<br>
   year={2022},<br>
