@@ -1,0 +1,15 @@
+@inproceedings{gu2022cdnpg,
+    title = "Continuous Decomposition of Granularity for Neural Paraphrase Generation",
+    author = "Gu, Xiaodong  and
+      Zhang, Zhaowei  and
+      Lee, Sang-Woo  and
+      Yoo, Kang Min  and
+      Ha, Jung-Woo",
+    booktitle = "Proceedings of the 29th International Conference on Computational Linguistics",
+    month = oct,
+    year = "2022",
+    address = "Gyeongju, Republic of Korea",
+    publisher = "International Committee on Computational Linguistics",
+    url = "https://aclanthology.org/2022.coling-1.554",
+    pages = "6369--6378",
+    }
