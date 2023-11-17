@@ -1,0 +1,7 @@
+@inproceedings{zhang2023infere, <br>
+  title={Infe{RE}: Step-by-Step Regex Generation via Chain of Inference},<br>
+  author={Zhang, Shuai and Gu, Xiaodong and Chen, Yuting and Shen, Beijun},<br>
+  booktitle={Proceedings of the 38th International Conference on Automated Software Engineering (ASE 2023)},<br>
+  year={2023},<br>
+  organization={IEEE}<br>
+}
