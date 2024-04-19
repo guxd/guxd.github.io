@@ -1,5 +1,6 @@
 .container {
     width: 2000px;
+    margin: 80 auto;
 }
 .about {
     width: 1220px;
