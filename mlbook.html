@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!-- saved from url=(0051)http://faculty.bicmr.pku.edu.cn/~wenzw/optbook.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/">
+
+<link rel="stylesheet" href="./mlbook/jemdoc.css" type="text/css">
+<title>机器学习教材</title>
+<!-- MathJax -->
+<script src="./mlbook/latest.js" async="">
+</script>
+<script type="text/x-mathjax-config;executed=true">
+MathJax.Hub.Config({
+	  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+<!-- End MathJax -->
+<script type="text/javascript" async="" src="./mlbook/MathJax.js"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body data-new-gr-c-s-check-loaded="14.1322.0" data-gr-ext-installed=""><div id="MathJax_Message" style="display: none;"></div>
+<table summary="Table for page layout." id="tlayout">
+<tbody><tr valign="top">
+<td id="layout-menu">
+<div class="menu-category">Xiaodong Gu</div>
+<div class="menu-item"><a href="https://guxd.github.io/index.html">Home</a></div>
+<div class="menu-category">mlbook</div>
+<div class="menu-item"><a href="https://guxd.github.io/mlbook.html" class="current">Home</a></div>
+<div class="menu-item"><a href="https://guxd.github.io/mlbook.html#intro">Book&nbsp;Information</a></div>
+<div class="menu-item"><a href="https://guxd.github.io/mlbook.html#pub">Buy/Download&nbsp;book</a></div>
+<div class="menu-item"><a href="https://guxd.github.io/mlbook.html#lecture">Lecture</a></div>
+<div class="menu-item"><a href="https://guxd.github.io/mlbook.html#solu">Solution&nbsp;Manual</a></div>
+<div class="menu-item"><a href="https://guxd.github.io/mlbook.html#exer">Exercises/Projects</a></div>
+</td>
+<td id="layout-content">
+<div id="toptitle">
+<h1>机器学习与大语言模型</h1>
+</div>
+<h2>出版信息  </h2>
+<ul>
+<li><p>顾小东，机器学习与大语言模型, 上海交通大学出版社， ISBN：9787313343420 <br>
+</p>
+</li>
+</ul>
+<table class="imgtable"><tbody><tr><td>
+<img src="./mlbook/mlbook.jpg" alt="400px" width="500px">&nbsp;</td>
+<td align="left"></td></tr></tbody></table>
+<h2>本书简介 <a name="intro"></a></h2>
+<p>《机器学习与大语言模型》系统介绍了机器学习和大语言模型的核心概念、理论基础与主流算法，
+  旨在帮助读者建立贯通传统方法与现代深度学习技术的统一知识框架。
+  全书以“原理—算法—应用”为主线，从基础的线性模型、特征工程与统计学习理论出发，
+  逐步过渡到神经网络、卷积模型、序列学习，
+  再延伸至 Transformer、大语言模型等当代前沿技术，为读者展现机器学习技术体系的完整演化脉络。
+</p>
+<p>全书主要内容包括：
+</p>
+<ul>
+<li><p><b>经典机器学习算法</b>：经典机器学习方法：线性回归、逻辑回归、支持向量机、树模型等，帮助读者扎实掌握传统方法的数学基础与适用场景。
+  </p>
+</li>
+<li><p><b>深度学习基础</b>：揭示神经网络的本质原理和深度学习的核心内涵。介绍反向传播算法等，为理解大型神经网络模型奠定基础</p>
+</p>
+</li>
+<li><p><b>语言模型</b>：深入探究语言模型的本质，从n-gram到循环神经网络(RNN)再到Seq2Seq与注意力机制，系统讲解自然语言处理领域中“序列学习”的逻辑演进。在此基础上引出Transformer及其衍生模型，包括 Self-Attention等。</p></li>
+<li><p><b>大语言模型</b>：深入解析BERT与GPT系列模型的设计理念、预训练任务、微调策略，并展示大规模预训练模型在实际任务中的应用方式。参数高效微调（PEFT）、检索增强（RAG）等前沿主题，帮助读者了解当前最具影响力的技术方向。</p></li>
+<li><p><b>机器视觉</b>：介绍卷积神经网络的核心思想与设计演化，包括经典网络及其在图像分类、目标检测、语义分割等任务中的应用。结合Vision Transformer（ViT），Vision Language Model等近年来兴起的视觉模型，
+  展示从卷积范式到视觉理解的迁移路径，帮助读者建立对现代计算机视觉的结构化理解。</p></li>
+<li><p><b>生成式模型</b>：系统讲解生成式建模的主要技术路线，包括变分自编码器（VAE）、
+  生成对抗网络（GAN）、扩散模型等，并结合图像生成、文本生成等应用场景，
+  阐述其背后的概率建模思想与训练机制，呈现当代生成式 AI 技术的理论基础与应用边界。</p></li>
+<li><p><b>强化学习</b>：从马尔可夫决策过程（MDP）、价值函数与策略搜索等基础概念入手，
+  讲解Q-Learning、策略梯度等经典算法，并逐步扩展到深度强化学习框架，包括DQN等方法。</p></li>
+</ul>
+<p>本书主要概念基本配有详细的例子来解释。主要算法也都通过实际应用问题对算法细节进行详细阐述，相关程序也可以在本网页下载。
+</p>
+<h2>本书特点</h2>
+<ul>
+<li><p><b>不仅介绍算法，更讲“思想演化”</b>。
+ 本书的一大特色，是希望把“机器学习”从单纯的算法列表重新还原为一门思想体系，
+ 让每一个知识点都“有来有去、有根有据”。
+ 把“机器学习”从单纯的算法列表重新还原为一门思想体系，
+ 机器学习的每个概念都不是凭空出现的，而是数十年研究和无数实践探索的智慧结晶。
+ 本书坚持从问题动机—方法设计—算法实现—典型应用的逻辑展开，
+ 帮助读者理解“为什么会有这个算法”、“它试图解决什么问题”、“为什么这样设计能解决问题”、
+ “它与前后知识点的关系是什么”。 不仅介绍算法，更讲“思想演化”。
+ 这种写法既延续了严谨的技术体系，又将理论置于直观的语境之中，
+ 让读者能够真正“看懂、想通、用上”。唯有理解其根本动机与限制，
+ 才能在未来的技术浪潮中真正站稳脚跟。
+</p>
+</li>
+<li><p><b>兼顾传统机器学习与最新发展</b>。
+  从线性回归、SVM，到深度学习、卷积网络，再到近年的 Transformer、预训练语言模型与提示学习，
+  本书试图构建一个贯穿经典与现代的统一框架。
+  事实上，无论是线性回归、逻辑回归，还是神经网络与大语言模型，
+  它们背后的思想原理都存在深刻的共通性。因此，本书在编排结构时，
+  刻意打通机器学习“经典算法—深度学习—预训练与生成式模型”的知识链路。
+  从线性模型中的梯度优化、几何解释，到 SVM 的间隔思想，再到深度网络的表征能力与反向传播机制，
+  读者可以看到一条逐渐丰富、不断扩展的技术主线。
+  我们希望呈现的是一个“统一的机器学习世界观”——传统方法与深度学习并不是两个割裂的体系，
+  而是从不同角度回答同一类问题：如何有效表征数据？如何从有限样本中泛化？
+  如何设计可优化、可扩展的模型？而大模型时代的许多突破，也可以在经典理论中找到回响。
+</p>
+</li>
+</ul>
+<h2>教材购买信息 <a name="pub"></a></h2>
+<ul>
+<li>
+<ul>
+<li><p><a href="https://item.jd.com/14700185.html" target="“blank”">京东自营链接（已经可以购买）：item.jd.com/13064530.html</a>
+</p>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li><p>限于作者的知识水平，书中难免有不妥和错误之处，恳请读者不吝批评和指正。 <br>
+勘误收集: 如果您发现任何不妥和错误之处，麻烦您通过邮件反馈。
+</p>
+</li>
+</ul>
+<h2>电子教案 <a name="lecture"></a></h2>
+<ul>
+<li><p>电子教案目前版本还很初略，持续更新中。<br>
+</p>
+<ul>
+<li><p>电子教案的ppt源文件目前只开放给使用本教材的任课老师。<br> 
+</p>
+</li>
+<li><p>课程任课教师请用您单位email发邮件，邮件地址请见下面信息反馈。如果不是使用单位官方邮件发送，请务必说明身份信息。无法判断身份的邮件将不予回复。
+</p>
+</li></ul>
+</li>
+<li><p>机器学习概述，<a href="https://guxd.github.io/mlbook/lect/l1_intro.pdf" target="“blank”">讲义下载</a>
+</p>
+</li>
+<li><p>线性回归，<a href="https://guxd.github.io/mlbook/lect/l2_linear_regr.pdf" target="“blank”">讲义下载</a>
+</p>
+</li>
+<li><p>决策树，<a href="https://guxd.github.io/mlbook/lect/l3_decision_tree.pdf" target="“blank”">讲义下载</a>
+</p>
+</li>
+<li><p>贝叶斯分类，<a href="https://guxd.github.io/mlbook/lect/l4_bayes.pdf" target="“blank”">讲义下载</a>
+</p>
+</li>
+<li><p>K近邻分类，<a href="https://guxd.github.io/mlbook/lect/l5_knn.pdf" target="“blank”">讲义下载</a>
+</p>
+</li>
+<li><p>逻辑回归，<a href="https://guxd.github.io/mlbook/lect/l6_lr.pdf" target="“blank”">讲义下载</a><br>
+</p>
+</li>
+<li><p>支持向量机，<a href="https://guxd.github.io/mlbook/lect/l7_svm.pdf" target="“blank”">讲义下载</a><br>
+</p>
+</li>
+<li><p>多层感知机，<a href="https://guxd.github.io/mlbook/lect/l8_mlp.pdf" target="“blank”">讲义下载</a>
+</p>
+</li>
+<li><p>语言模型，<a href="https://guxd.github.io/mlbook/lect/l9_lm.pdf" target="“blank”">讲义下载</a>
+</p>
+</li>
+<li><p>Transformer，<a href="https://guxd.github.io/mlbook/lect/l10_transformer.pdf" target="“blank”">讲义下载</a>
+</p>
+</li>
+<li><p>大语言模型，<a href="https://guxd.github.io/mlbook/lect/l11_llm.pdf" target="“blank”">讲义下载</a>
+</p>
+</li>
+<li><p>卷积神经网络，<a href="https://guxd.github.io/mlbook/lect/l12_cnn.pdf" target="“blank”">讲义下载</a><br>
+</p>
+</li>
+<li><p>机器视觉，<a href="https://guxd.github.io/mlbook/lect/l13_cv.pdf" target="“blank”">讲义下载</a>
+</p>
+</li>
+<li><p>聚类，<a href="https://guxd.github.io/mlbook/lect/l14_kmeans.pdf" target="“blank”">讲义下载</a><br>
+</p>
+</li>
+<li><p>降维，<a href="https://guxd.github.io/mlbook/lect/l15_dim.pdf" target="“blank”">讲义下载</a>
+</p>
+</li>
+<li><p>生成式模型，<a href="https://guxd.github.io/mlbook/lect/l16_gen.pdf" target="“blank”">讲义下载</a>
+</p>
+</li>
+<li><p>强化学习，<a href="https://guxd.github.io/mlbook/lect/l17_rl.pdf" target="“blank”">讲义下载</a>
+</p>
+</li>
+</ul>
+
+<h2>信息反馈</h2>
+<p>限于作者的知识水平，书中难免有不妥和错误之处，恳请读者不吝批评和指正。 
+</p>
+
+<div id="footer">
+<div id="footer-text">
+Page generated 2026-08-05 14:48:14 CST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+</div>
+</div>
+</td>
+</tr>
+</tbody></table>
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true" style="visibility: visible !important;"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
